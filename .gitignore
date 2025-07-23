@@ -1,0 +1,7 @@
+# Python-generated files
+__pycache__/
+
+# environments
+.env
+.venv
+.vscode/
