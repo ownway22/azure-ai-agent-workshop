@@ -38,14 +38,23 @@ from mcp.client.stdio import stdio_client
 os.system('cls' if os.name=='nt' else 'clear')
 
 # Load environment variables from .env file
-load_dotenv()
-project_endpoint = os.getenv("PROJECT_ENDPOINT")
-model_deployment = os.getenv("MODEL_DEPLOYMENT_NAME")
+if not load_dotenv('../.env', override=True):
+    load_dotenv(override=True)
+project_endpoint = os.getenv("AZURE_AI_AGENT_ENDPOINT")
+model_deployment = os.getenv("AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME")
 
 async def connect_to_server(exit_stack: AsyncExitStack):
+    # Check if mcp-server.py exists in current directory structure
+    if os.path.exists("./mcp-servers/mcp-server.py"):
+        mcp_server_path = "./mcp-servers/mcp-server.py"
+    elif os.path.exists("./s1_single_agent/mcp-servers/mcp-server.py"):
+        mcp_server_path = "./s1_single_agent/mcp-servers/mcp-server.py"
+    else:
+        raise FileNotFoundError("Cannot find mcp-server.py in expected locations")
+    
     server_params = StdioServerParameters(
         command="python",
-        args=["./mcp-servers/mcp-server.py"],
+        args=[mcp_server_path],
         env=None
     )
 

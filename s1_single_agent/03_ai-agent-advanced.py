@@ -38,14 +38,15 @@ from files.utilities import Utilities
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
 
-load_dotenv()
+if not load_dotenv('../.env', override=True):
+    load_dotenv(override=True)
 
 AGENT_NAME = "03_Contoso sales agent"
 TENTS_DATA_SHEET_FILE = "/datasheet/contoso-tents-datasheet.pdf"
 FONTS_ZIP = "/fonts/fonts.zip"
-API_DEPLOYMENT_NAME = os.environ["MODEL_DEPLOYMENT_NAME"]
-PROJECT_ENDPOINT = os.environ["PROJECT_ENDPOINT"]
-AZURE_BING_CONNECTION_ID = os.environ["AZURE_BING_CONNECTION_ID"]
+API_DEPLOYMENT_NAME = os.environ["AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME"]
+PROJECT_ENDPOINT = os.environ["AZURE_AI_AGENT_ENDPOINT"]
+# AZURE_BING_CONNECTION_ID = os.environ["AZURE_BING_CONNECTION_ID"]
 MAX_COMPLETION_TOKENS = 10240
 MAX_PROMPT_TOKENS = 20480
 TEMPERATURE = 0.1

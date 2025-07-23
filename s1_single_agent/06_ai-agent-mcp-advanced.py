@@ -53,7 +53,8 @@ def get_azure_open_ai_client():
     Returns:
         AsyncAzureOpenAI: Configured Azure OpenAI client
     """
-    load_dotenv()
+    if not load_dotenv('../.env', override=True):
+        load_dotenv(override=True)
     
     return AsyncAzureOpenAI(
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),

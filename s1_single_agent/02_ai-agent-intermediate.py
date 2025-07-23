@@ -22,12 +22,13 @@ from azure.ai.agents.models import (
 from azure.identity.aio import DefaultAzureCredential
 from dotenv import load_dotenv
 
-load_dotenv()
 
+if not load_dotenv('../.env', override=True):
+    load_dotenv(override=True)
 
 async def main() -> None:
     project_client = AIProjectClient(
-        endpoint=os.environ["PROJECT_ENDPOINT"],
+        endpoint=os.environ["AZURE_AI_AGENT_ENDPOINT"],
         credential=DefaultAzureCredential(),
     )
 
@@ -35,7 +36,7 @@ async def main() -> None:
         agents_client = project_client.agents
 
         agent = await agents_client.create_agent(
-            model=os.environ["MODEL_DEPLOYMENT_NAME"],
+            model=os.environ["AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME"],
             name="02 App agent",
             instructions="You are a helpful assistant that tells jokes and can have a conversation with the user.",
         )
