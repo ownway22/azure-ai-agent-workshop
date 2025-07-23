@@ -13,7 +13,7 @@ from semantic_kernel.functions import kernel_function
 load_dotenv()
 
 # Constants
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 """
 The following sample demonstrates how to create a chat completion agent that
@@ -55,7 +55,7 @@ async def main():
     # 1. Create the agent
     agent = ChatCompletionAgent(
         service=AzureChatCompletion(
-            endpoint=MY_AZURE_OPENAI_ENDPOINT,
+            endpoint=AZURE_OPENAI_ENDPOINT,
         ),
         name="Host",
         instructions="Answer questions about the menu.",

@@ -22,7 +22,7 @@ from semantic_kernel.functions import KernelArguments
 load_dotenv()
 
 # Constants
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 """
 技術問題解決中心
@@ -122,7 +122,7 @@ def _create_kernel_with_chat_completion(service_id: str) -> Kernel:
     """建立具有聊天完成服務的 Kernel"""
     kernel = Kernel()
     kernel.add_service(
-        AzureChatCompletion(endpoint=MY_AZURE_OPENAI_ENDPOINT, service_id=service_id)
+        AzureChatCompletion(endpoint=AZURE_OPENAI_ENDPOINT, service_id=service_id)
     )
     return kernel
 
@@ -183,7 +183,7 @@ async def create_structured_report(group_chat, problem: str) -> TechnicalSolutio
     settings.response_format = TechnicalSolutionReport
 
     report_agent = ChatCompletionAgent(
-        service=AzureChatCompletion(endpoint=MY_AZURE_OPENAI_ENDPOINT),
+        service=AzureChatCompletion(endpoint=AZURE_OPENAI_ENDPOINT),
         name="ReportGenerator",
         instructions=f"""
         根據以下技術問題解決過程，生成結構化的技術解決方案報告。

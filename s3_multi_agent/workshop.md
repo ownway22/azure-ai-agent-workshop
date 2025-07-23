@@ -105,14 +105,14 @@ pip install -r ./python/samples/getting_started_with_agents/0_setup/requirements
 ```
 ###### Get Azure OpenAI Service configuration
 - AZURE_OPENAI_CHAT_DEPLOYMENT_NAME="o4-mini"
-- MY_AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
+- AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
 - AZURE_OPENAI_API_KEY="<example-api-key>"
 - AZURE_OPENAI_API_VERSION="<example-api-version>"
 ![alt text](./img/image3.png)
 ![alt text](./img/image4.png)
 - Sample format
 ```
-  MY_AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
+  AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
   AZURE_OPENAI_CHAT_DEPLOYMENT_NAME="o4-mini"
   AZURE_OPENAI_API_KEY="<example-api-key>"
   AZURE_OPENAI_API_VERSION="<example-api-version>"
@@ -165,7 +165,7 @@ AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME="gpt-4.1"
 
 # Used for Azure OpenAI Service configuration
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME="o4-mini"
-MY_AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
+AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
 AZURE_OPENAI_API_KEY="<example-api-key>"
 AZURE_OPENAI_API_VERSION="<example-api-version>"
 ```

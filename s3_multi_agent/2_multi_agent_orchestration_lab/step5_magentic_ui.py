@@ -37,7 +37,7 @@ https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-mult
 
 # Load environment variables from .env file
 load_dotenv()
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 BING_CONNECTION_NAME = os.getenv("BING_CONNECTION_NAME", "mybingsearch")
 
 
@@ -575,7 +575,7 @@ async def main(message: cl.Message):
                 members=agents_list,
                 manager=StandardMagenticManager(
                     chat_completion_service=AzureChatCompletion(
-                        endpoint=MY_AZURE_OPENAI_ENDPOINT,
+                        endpoint=AZURE_OPENAI_ENDPOINT,
                     )
                 ),
                 agent_response_callback=agent_response_callback,

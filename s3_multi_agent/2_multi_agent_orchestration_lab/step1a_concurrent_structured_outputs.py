@@ -15,13 +15,13 @@ from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 load_dotenv()
 
 # Constants
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 # Debug: Check if environment variable is loaded
-if not MY_AZURE_OPENAI_ENDPOINT:
-    raise ValueError("MY_AZURE_OPENAI_ENDPOINT environment variable is not set")
+if not AZURE_OPENAI_ENDPOINT:
+    raise ValueError("AZURE_OPENAI_ENDPOINT environment variable is not set")
 
-print(f"Using Azure OpenAI endpoint: {MY_AZURE_OPENAI_ENDPOINT}")
+print(f"Using Azure OpenAI endpoint: {AZURE_OPENAI_ENDPOINT}")
 
 """
 以下範例示範如何建立並行編排，讓多個代理程式同時執行相同任務並回傳結構化輸出。
@@ -48,21 +48,21 @@ def get_agents() -> list[Agent]:
         name="ThemeAgent",
         instructions="您是識別文章主題的專家。給定一篇文章，識別主要主題。",
         service=AzureChatCompletion(
-            endpoint=MY_AZURE_OPENAI_ENDPOINT,
+            endpoint=AZURE_OPENAI_ENDPOINT,
         ),
     )
     sentiment_agent = ChatCompletionAgent(
         name="SentimentAgent",
         instructions="您是情感分析專家。給定一篇文章，識別情感。",
         service=AzureChatCompletion(
-            endpoint=MY_AZURE_OPENAI_ENDPOINT,
+            endpoint=AZURE_OPENAI_ENDPOINT,
         ),
     )
     entity_agent = ChatCompletionAgent(
         name="EntityAgent",
         instructions="您是實體識別專家。給定一篇文章，提取實體。",
         service=AzureChatCompletion(
-            endpoint=MY_AZURE_OPENAI_ENDPOINT,
+            endpoint=AZURE_OPENAI_ENDPOINT,
         ),
     )
 
@@ -83,7 +83,7 @@ async def main():
             output_transform=structured_outputs_transform(
                 ArticleAnalysis,
                 AzureChatCompletion(
-                    endpoint=MY_AZURE_OPENAI_ENDPOINT,
+                    endpoint=AZURE_OPENAI_ENDPOINT,
                 ),
             ),
         )

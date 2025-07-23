@@ -14,7 +14,7 @@ from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 load_dotenv()
 
 # Constants
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 """
 The following sample demonstrates how to create a chat completion agent that
@@ -40,7 +40,7 @@ async def main():
     # 1. Create the agent by specifying the service
     agent = ChatCompletionAgent(
         service=AzureChatCompletion(
-            endpoint=MY_AZURE_OPENAI_ENDPOINT,
+            endpoint=AZURE_OPENAI_ENDPOINT,
         ),
         name="Assistant",
         instructions="Answer the user's questions.",

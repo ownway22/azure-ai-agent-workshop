@@ -15,7 +15,7 @@ from semantic_kernel.functions import KernelArguments, kernel_function
 load_dotenv()
 
 # Constants
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 """
 The following sample demonstrates how to create a chat completion agent that
@@ -62,7 +62,7 @@ async def main():
     kernel = Kernel()
     kernel.add_plugin(MenuPlugin(), plugin_name="menu")
     kernel.add_service(
-        AzureChatCompletion(endpoint=MY_AZURE_OPENAI_ENDPOINT, service_id=service_id)
+        AzureChatCompletion(endpoint=AZURE_OPENAI_ENDPOINT, service_id=service_id)
     )
 
     # 2. Configure the function choice behavior to auto invoke kernel functions

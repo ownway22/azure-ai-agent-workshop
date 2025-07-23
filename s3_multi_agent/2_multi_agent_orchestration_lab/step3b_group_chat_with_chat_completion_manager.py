@@ -42,7 +42,7 @@ load_dotenv()
 
 # Constants
 SEPARATOR_LINE = "*********************"
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 
 """
@@ -417,7 +417,7 @@ async def main():
             manager=ChatCompletionGroupChatManager(
                 topic="對您個人而言，美好的生活意味著什麼？",
                 service=AzureChatCompletion(
-                    endpoint=MY_AZURE_OPENAI_ENDPOINT,
+                    endpoint=AZURE_OPENAI_ENDPOINT,
                 ),
                 max_rounds=10,
             ),

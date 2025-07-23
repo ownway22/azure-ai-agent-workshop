@@ -12,7 +12,7 @@ from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
 # 載入環境變數
 load_dotenv()
-AZURE_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 
 async def get_test_agents() -> list[Agent]:
@@ -41,7 +41,7 @@ async def test_multi_agent():
     # 新增端點驗證
     if not AZURE_ENDPOINT:
         print("❌ 環境變數設定不完整")
-        print("   請設定 MY_AZURE_OPENAI_ENDPOINT")
+        print("   請設定 AZURE_OPENAI_ENDPOINT")
         return False
 
     try:

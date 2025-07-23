@@ -20,11 +20,11 @@ async def test_chat_completion():
     try:
         # 1. 檢查環境變數
         print("📋 檢查環境變數...")
-        endpoint = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+        endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 
         if not endpoint:
             print("❌ 環境變數設定不完整")
-            print("   請設定 MY_AZURE_OPENAI_ENDPOINT")
+            print("   請設定 AZURE_OPENAI_ENDPOINT")
             return False
 
         print(f"✅ 環境變數設定完成")

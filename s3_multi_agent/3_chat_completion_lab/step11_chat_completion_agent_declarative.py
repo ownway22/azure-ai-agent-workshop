@@ -17,7 +17,7 @@ from semantic_kernel.functions import kernel_function
 load_dotenv()
 
 # Constants
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 """
 The following sample demonstrates how to create a chat completion agent using a 
@@ -80,7 +80,7 @@ async def main():
     agent: ChatCompletionAgent = await AgentRegistry.create_from_yaml(
         AGENT_YAML,
         kernel=kernel,
-        service=AzureChatCompletion(endpoint=MY_AZURE_OPENAI_ENDPOINT),
+        service=AzureChatCompletion(endpoint=AZURE_OPENAI_ENDPOINT),
     )
 
     # 6. Create a thread to hold the conversation

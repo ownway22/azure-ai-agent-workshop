@@ -6,7 +6,7 @@
 ```python
 # AI 智能管理器 - 會思考和規劃
 manager=StandardMagenticManager(
-    chat_completion_service=AzureChatCompletion(endpoint=MY_AZURE_OPENAI_ENDPOINT)
+    chat_completion_service=AzureChatCompletion(endpoint=AZURE_OPENAI_ENDPOINT)
 )
 ```
 - **AI 大腦控制**: `StandardMagenticManager` 是一個 **AI 代理**，會分析任務並智能決定：
@@ -202,7 +202,7 @@ DataAnalyst: "分析完成"
 async def main():
     # 1. 建立 AI 管理器（這是關鍵！）
     manager = StandardMagenticManager(
-        chat_completion_service=AzureChatCompletion(endpoint=MY_AZURE_OPENAI_ENDPOINT)
+        chat_completion_service=AzureChatCompletion(endpoint=AZURE_OPENAI_ENDPOINT)
     )
     
     # 2. 建立協調器

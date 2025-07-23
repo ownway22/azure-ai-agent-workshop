@@ -35,7 +35,7 @@ Magentic 管理員需要支援結構化輸出的聊天完成模型。
 """
 # Load environment variables from .env file
 load_dotenv()
-MY_AZURE_OPENAI_ENDPOINT = os.getenv("MY_AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 
 class ResearchPlugin:
@@ -169,7 +169,7 @@ async def main():
             members=agents_list,
             manager=StandardMagenticManager(
                 chat_completion_service=AzureChatCompletion(
-                    endpoint=MY_AZURE_OPENAI_ENDPOINT,
+                    endpoint=AZURE_OPENAI_ENDPOINT,
                 )
             ),
             agent_response_callback=agent_response_callback,
