@@ -22,7 +22,7 @@ python -m venv .venv
 
 - Activate the virtual environment
 ```bash
-.venv\Scripts\activate     # Windows
+.venv\Scripts\activate     # Windows PowerShell
 
 source .venv/bin/activate   # Mac/Linux
 ```
