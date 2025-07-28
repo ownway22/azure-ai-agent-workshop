@@ -22,19 +22,27 @@ Modify `.env` file with your Azure resource information.
 
 ```bash
 # Azure AI Foundry Agent Service
-AZURE_AI_AGENT_ENDPOINT = "xxx"
-AZURE_AI_AGENT_API_KEY = "xxx"
-AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME = "gpt-4o"
+AZURE_AI_AGENT_ENDPOINT="https://<example-project-name>.services.ai.azure.com/api/projects/<example-project-name>"
+AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME="gpt-4o"
+
+# Azure Bing Search Service
+AZURE_BING_CONNECTION_ID=""
 
 # Azure AI Search Service
-AZURE_SEARCH_ENDPOINT = "xxx"
-AZURE_SEARCH_API_KEY = "xxx"
+AZURE_SEARCH_ENDPOINT="https://<example-search-name>.search.windows.net"
+AZURE_SEARCH_API_KEY=""
 
 # Azure OpenAI Service
-AZURE_OPENAI_ENDPOINT = "xxx"
-AZURE_OPENAI_API_KEY = "xxx"
-AZURE_OPENAI_API_VERSION = "xxx"
-AZURE_OPENAI_CHAT_DEPLOYMENT_NAME = "gpt-4o"
+AZURE_OPENAI_ENDPOINT="https://<example-project-name>.openai.azure.com/openai/deployments/<example-model-deployment-name>/chat/completions?api-version=<example-api-version>"
+AZURE_OPENAI_API_KEY="<example-api-key>"
+AZURE_OPENAI_API_VERSION="<example-api-version>"
+AZURE_OPENAI_CHAT_DEPLOYMENT_NAME="gpt-4o"
+AZURE_OPENAI_GPT_MODEL="gpt-4o"         # for s2_ai_search
+AZURE_OPENAI_GPT_DEPLOYMENT="gpt-4o"    # for s2_ai_search
+
+# AZURE OpenAI Embedding Model Service
+AZURE_OPENAI_EMBEDDING_MODEL="text-embedding-3-large"       # for s2_ai_search
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT="text-embedding-3-large"  # for s2_ai_search
 ```
 
 
