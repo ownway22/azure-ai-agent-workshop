@@ -1,6 +1,6 @@
 # Azure AI Agent Workshop
 
-2025 TrendMicro AI Hackathon x Microsoft Azure AI Agent Workshop
+2025 AI Hackathon x Microsoft Azure AI Agent Workshop
 
 ## Clone the repository
 ```bash
